@@ -31,15 +31,17 @@ Things you may want to cover:
 |name|string|null: false|
 ### Association
 - has_many :groups,through: :group_users
+- has_many :messages
+
 
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|string|null: false|
+|text|string|
 |image||string|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false,foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false,foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
@@ -47,16 +49,16 @@ Things you may want to cover:
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|strings|null: false|
+|name|string|null: false|
 ### Association
 - has_many :users,through: :group_users
-
+- has_many :messages
 
 ## groups_userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key:true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key:true|
 
 ###Association
 - belongs_to :group

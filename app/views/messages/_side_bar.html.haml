@@ -1,10 +1,12 @@
 .side-bar
   .side-bar__side-header
     .side-bar__side-header__side-box
-      %p masa
-      = link_to "#", class: ".side-bar__side-header__side-box" do
-        = icon('far', 'edit')
-        = icon('fas', 'cog') 
+      = current_user.name
+      .side-bar__side-header__side-box__contents
+        = link_to "#", class: ".side-bar__side-header__side-box" do
+          = icon('far', 'edit')
+        = link_to edit_user_path(current_user), class: ".side-bar__side-header__side-box" do
+          = icon('fas', 'cog') 
   .side-bar__groups
     .side-bar__groups__groups-list
       %p tech camp

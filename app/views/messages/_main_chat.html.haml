@@ -1,0 +1,31 @@
+.main-chat
+  .main-chat__chat-header
+    .main-chat__chat-header__text
+      = "test"
+    .main-chat__chat-header__edit-btn
+      = link_to "#", class: "main-chat__chat-header__edit-btn" do
+        Edit
+  .main-chat__message
+    .main-chat__message__contents
+      .main-chat__message__contents__name
+        masa
+      .main-chat__message__contents__time
+        (YYYY-MM-DDThh:mm:ssTZD)
+    .main-chat__message__contents__comment
+      おはよう！
+
+    .main-chat__message__contents__user
+      .main-chat__message__contents__user__edit
+        masa
+      .main-chat__message__contents__user__times
+        (YYYY-MM-DDThh:mm:ssTZD)
+    .main-chat__message__contents__user__days
+      今日は夜から雨
+      
+  .main-chat__form
+    .main-chat__form__format
+      %input{type: "text", class: "main-chat__form__form-text", placeholder: "type a message"}
+      %label{class: "main-chat__form__form-text__input"}
+        = icon('far', 'image')
+        %input{type: "file", class: "main-chat__form__form-text__font"}
+    %input{type: "submit", value: "Send", class: "submit-btn"}

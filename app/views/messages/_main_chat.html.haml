@@ -1,31 +1,21 @@
 .main-chat
-  .main-chat__chat-header
-    .main-chat__chat-header__text
-      = "test"
-    .main-chat__chat-header__edit-btn
-      = link_to "#", class: "main-chat__chat-header__edit-btn" do
-        Edit
+  .main-chat__header
+    .main-chat__header__chat-header
+      .main-chat__header__chat-header__text
+        = @group.name
+      .main-chat__header__chat-header__group-line
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group), class: "main-chat__header__edit-btn" do
+      Edit
   .main-chat__message
-    .main-chat__message__contents
-      .main-chat__message__contents__name
-        masa
-      .main-chat__message__contents__time
-        (YYYY-MM-DDThh:mm:ssTZD)
-    .main-chat__message__contents__comment
-      おはよう！
-
-    .main-chat__message__contents__user
-      .main-chat__message__contents__user__edit
-        masa
-      .main-chat__message__contents__user__times
-        (YYYY-MM-DDThh:mm:ssTZD)
-    .main-chat__message__contents__user__days
-      今日は夜から雨
-      
+    = render @messages
+    
   .main-chat__form
-    .main-chat__form__format
-      %input{type: "text", class: "main-chat__form__form-text", placeholder: "type a message"}
-      %label{class: "main-chat__form__form-text__input"}
-        = icon('far', 'image')
-        %input{type: "file", class: "main-chat__form__form-text__font"}
-    %input{type: "submit", value: "Send", class: "submit-btn"}
+    = form_with model: [@group, @message], html: {class: "main-chat__form__format"}, local: true do |f|
+      .main-chat__form__format
+        = f.text_field :content, class: 'form-text', placeholder: 'type a message'
+        = f.label :image, class: 'input' do
+          = icon('far', 'image', class: 'input')
+          = f.file_field :image, class: 'picture'
+      = f.submit 'Send', class: 'submit-btn'

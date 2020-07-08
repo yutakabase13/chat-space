@@ -162,6 +162,11 @@
     background-color: #ffffff bold;
     align-items: center;
     justify-content:left;
+    
+    a{
+      text-decoration: none;
+    }
+
     &__groups-list{
     font-size: 15px;
     color: white;
@@ -170,9 +175,6 @@
     font-size: 11px;
     color:white;
     margin-bottom: 45px;
-    }
-  .group-member{
-
     }
   }
 }

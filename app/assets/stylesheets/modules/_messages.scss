@@ -49,8 +49,9 @@
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     padding: 35px 40px 0;
+    overflow: scroll;
     &__contents{
-      display: flex;
+
       &__name{
         padding: 0 0 15px 0;
         font-size: 16px;
@@ -61,29 +62,12 @@
         font-size: 12px;
         color: #999999;
         display: flex;
-      }
+        }
+      
     &__comment{
       font-size: 14px;
       color: #434A54;
       padding-bottom: 46px;
-      }
-    &__user{
-      display: flex;
-      &__edit{
-        font-size: 16px;
-        color: #333333;
-        display: flex;
-        padding: 0 0 15px 0;
-      }
-      &__times{
-        font-size: 12px;
-        color: #999999;
-      }
-    &__days{
-      font-size: 14px;
-      color: #434A54;
-      }
-
       }
     }
   }
@@ -129,14 +113,16 @@
       margin-left: 15px;
       border: none;
       }
+    }
   }
-}
+
 
 
 
 .side-bar{
   height: 100vh;
   width: 300px;
+  overflow: scroll;
   background-color:  #2f3e51;
   &__side-header{
     height: 100px;
@@ -178,12 +164,15 @@
     justify-content:left;
     &__groups-list{
     font-size: 15px;
-    color: white
+    color: white;
     }
     &__groups-comment{
     font-size: 11px;
     color:white;
     margin-bottom: 45px;
+    }
+  .group-member{
+
     }
   }
 }

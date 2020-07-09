@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def new
+
+  end
+
   def edit
   end
 

@@ -2,40 +2,40 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-      `<div class="main-chat__message__contents" data-message-id=${message.id}>
-        <div class="main-chat__message__contents__post">
-          <div class="main-chat__message__contents__name">
-              ${message.user_name}
-            <div class="main-chat__message__contents__time">
-              ${message.created_at}
+        `<div class="main-chat__message__contents" data-message-id=${message.id}>
+          <div class="main-chat__message__contents__post">
+            <div class="main-chat__message__contents__name">
+                ${message.user_name}
+              <div class="main-chat__message__contents__time">
+                ${message.created_at}
+                </div>
               </div>
             </div>
-          </div>
-          <div class="main-chat__form__format">
-            <p class="main-chat__message__contents__comment">
-              ${message.content}
-            </p>
-            <img class="Message__image" src="${message.image}">
-          </div>
-        </div>`
+            <div class="main-chat__form__format">
+              <p class="main-chat__message__contents__comment">
+                ${message.content}
+              </p>
+              <img class="Message__image" src="${message.image}">
+            </div>
+          </div>`
       return html;
     } else {
       let html =
       `<div class="main-chat__message__contents" data-message-id=${message.id}>
-        <div class="main-chat__message__contents__post">
-          <div class="main-chat__message__contents__name">
-              ${message.user_name}
-            <div class="MessageInfo__date">
-              ${message.created_at}
+          <div class="main-chat__message__contents__post">
+            <div class="main-chat__message__contents__name">
+                ${message.user_name}
+            <div class="main-chat__message__contents__time">
+                ${message.created_at}
+                </div>
               </div>
             </div>
-          </div>
-          <div class="main-chat__form__format">
-            <p class="main-chat__message__contents__comment">
-            ${message.content}
-            </p>
-        </div>
-      </div>`
+            <div class="main-chat__form__format">
+              <p class="main-chat__message__contents__comment">
+                ${message.content}
+              </p>
+            </div>
+          </div>`
       return html;
     };
   }

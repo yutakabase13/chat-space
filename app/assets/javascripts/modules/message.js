@@ -3,9 +3,8 @@ $(function(){
     if ( message.image ) {
       let html =
         `<div class=."main-chat__message__contents" data-message-id=${message.id}>
-          <div class="main-chat__message__contents">
-            <div class="main-chat__message__contents__post">
-              <div class="main-chat__message__contents__name">
+          <div class="main-chat__message__contents__post">
+            <div class="main-chat__message__contents__name">
                 ${message.user_name}
               <div class="main-chat__message__contents__time">
                 ${message.created_at}
@@ -23,9 +22,8 @@ $(function(){
     } else {
       let html =
       `<div class=."main-chat__message__contents" data-message-id=${message.id}>
-          <div class="main-chat__message__contents">
-            <div class="main-chat__message__contents__post">
-              <div class="main-chat__message__contents__name">
+          <div class="main-chat__message__contents__post">
+            <div class="main-chat__message__contents__name">
                 ${message.user_name}
             <div class="main-chat__message__contents__time">
                 ${message.created_at}
@@ -56,24 +54,14 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.MessageField').append(html);      
+      $('.main-chat__message').append(html);      
       $('form')[0].reset();
-      $('.MessageField').animate({ scrollTop: $('.MessageField')[0].scrollHeight});
-      $('.Form__submit').prop("disabled", false);
+      $('.main-chat__message').animate({ scrollTop: $('.main-chat__message')[0].scrollHeight});
+      $('.submit-btn').prop("disabled", false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-      $('.Form__submit').prop("disable", false);
+      $('.submit-btn').prop("disable", false);
     });
   });
 });
-//     let reloadMessages = function() {
-//       let last_message_id = $('.main-chat__message__contents:last').data("message-id");
-//       $.ajax({
-//         url: "api/messages",
-//         type: 'get',
-//         dataType: 'json',
-//         data: {id: last_message_id}
-//       })
-      
-//   setInterval(reloadMessages, 7000);

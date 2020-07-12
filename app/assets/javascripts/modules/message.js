@@ -11,13 +11,11 @@ $(function(){
                 </div>
               </div>
             </div>
-            <div class="main-chat__form__format">
-              <p class="main-chat__message__contents__comment">
+            <div class="main-chat__message__contents__comment">
                 ${message.content}
-              </p>
+              </div>
               <img class="Message__image" src="${message.image}">
-            </div>
-          </div>`
+        </div>`
       return html;
     } else {
       let html =
@@ -30,12 +28,10 @@ $(function(){
                 </div>
               </div>
             </div>
-            <div class="main-chat__form__format">
-              <p class="main-chat__message__contents__comment">
+            <div class="main-chat__message__contents__comment">
                 ${message.content}
-              </p>
-            </div>
-          </div>`
+              </div>
+       </div>`
       return html;
     };
   }

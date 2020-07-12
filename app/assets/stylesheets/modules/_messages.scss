@@ -140,17 +140,21 @@
       display: flex;
       justify-content: space-between;
       color: #ffffff;
-      &__content{
+      text-decoration: none;
+      &__contents{
         margin-left: 100px;
-      }
-      .far{
+      
+      .memo{
         color:#ffffff;
         margin-left: 5px;
+        text-decoration: none;
       }
       .fas{
         color: #ffffff;
+        text-decoration: none;
       }
     }
+   }
   }
   &__groups{
     height: calc(100vh - 100px);
